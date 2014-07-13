@@ -4,6 +4,10 @@ body * {
 	font-family: $globe-font-style;
 }
 
+a {
+	text-decoration: none;
+}
+
 form {
 	input, textarea, label {
 		width: 100%;
@@ -17,7 +21,7 @@ form {
 	input[type=tel],
 	textarea {
 		border: none;
-		@include border-radius(3px);
+		@include border-radius(5px);
 		&:focus {
 			outline: none;
 			box-shadow: 0 0 0 2px #aaa;
@@ -53,42 +57,161 @@ form {
 	}
 }
 
+// .header {
+// 	z-index: 2;
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	right: 0;
+// 	max-width: 1200px;
+// 	margin: 0 auto;
+// 	padding-top: 30px;
+// 	h1.logo {
+// 		img {
+// 			width: 100%;
+// 		}
+// 	}
+// 	ul.nav {
+// 		list-style: none;
+// 		text-align: right;
+// 		li {
+// 			display: inline-block;
+// 			color: #eee;
+// 			margin-left: 35px;
+// 			@include font-size(14);
+// 			&.active {
+// 				border: 1px solid #fff;
+// 				padding: 5px 13px;
+// 				border-radius: 5px;
+// 				color: #fff;
+// 			}
+// 		}
+// 	}
+// }
+
 .header {
 	z-index: 2;
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
-	max-width: 960px;
+	max-width: 1200px;
 	margin: 0 auto;
-	padding-top: 30px;
+	padding-top: 80px;
 	h1.logo {
 		img {
 			width: 100%;
 		}
 	}
 	ul.nav {
+		margin-top: 28px;
 		list-style: none;
 		text-align: right;
 		li {
 			display: inline-block;
-			color: #eee;
+			color: #bbb;
 			margin-left: 35px;
 			@include font-size(14);
+			a {
+				color: #bbb;
+				text-decoration: none;
+			}
+			&:hover {
+				cursor: pointer;
+				color: $main-color;
+				a {
+					color: $main-color;
+				}
+			}
 			&.active {
-				border: 1px solid #fff;
+				border: 1px solid $main-color;
 				padding: 5px 13px;
-				border-radius: 3px;
-				color: #fff;
+				border-radius: 5px;
+				a {
+					color: $main-color;
+				}
 			}
 		}
 	}
 }
 
+// .launch-screen {
+// 	position: relative;
+// 	height: 768px;
+// 	background-image: url(../images/bg3.jpg);
+// 	background-size: cover;
+// 	background-repeat: no-repeat;
+// 	background-position: center;
+// 	padding: 25px 0;
+
+// 	&:after {
+// 		z-index: 1;
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		right: 0;
+// 		bottom: 0;
+// 		content: "";
+// 		background: -webkit-linear-gradient(left top, #FFA26D, #3ABED0);
+// 		background: -moz-linear-gradient(left top, #FFA26D, #3ABED0);
+// 		opacity: 0.10;
+// 	}
+// 	&:before {
+// 		z-index: 0;
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		right: 0;
+// 		bottom: 0;
+// 		content: "";
+// 		background-color: #000;
+// 		background-image: url(../images/02.png);
+// 		opacity: 0.65;
+// 	}
+// 	.slogan {
+// 		z-index: 3;
+// 		position: absolute;
+// 		top: 50%;
+// 		left: 0;
+// 		right: 0;
+// 		margin-top: -100px;
+// 		text-align: center;
+// 		color: #fff;
+// 		h2 {
+// 			@include font-size(48);
+// 			font-weight: bold;
+// 			letter-spacing: 5px;
+// 			margin-bottom: 30px;
+// 		}
+// 		h6 {
+// 			@include font-size(18);
+// 			letter-spacing: 3px;
+// 		}
+// 		img {
+// 			max-width: 100%;
+// 			// min-width: 560px;
+// 		}
+// 	}
+// 	.scroll-down {
+// 		z-index: 3;
+// 		position: absolute;
+// 		left: 0;
+// 		right: 0;
+// 		bottom: 0;
+// 		text-align: center;
+// 		.button {
+// 			width: 240px;
+// 			padding: 14px;
+// 			border-radius: 3px 3px 0 0;
+// 			opacity: 0.7;
+// 			// border-radius: 100px;
+// 		}
+// 	}
+// }
 .launch-screen {
 	position: relative;
 	height: 768px;
-	background-image: url(../images/bg3.jpg);
+	background-image: url(../images/bg.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -116,7 +239,7 @@ form {
 		content: "";
 		background-color: #000;
 		background-image: url(../images/02.png);
-		opacity: 0.65;
+		opacity: 0.85;
 	}
 	.slogan {
 		z-index: 3;
@@ -127,19 +250,18 @@ form {
 		margin-top: -100px;
 		text-align: center;
 		color: #fff;
-		h2 {
-			@include font-size(48);
-			font-weight: bold;
-			letter-spacing: 5px;
-			margin-bottom: 30px;
-		}
-		h6 {
-			@include font-size(18);
-			letter-spacing: 3px;
-		}
-		img {
-			max-width: 100%;
-			// min-width: 560px;
+		p {
+			margin: 0 auto;
+			max-width: 600px;
+			font-size: 16px;
+			line-height: 2em;
+			color: rgba(255, 255, 255, .7);
+			margin-top: 6em;
+			strong {
+				margin: 0 5px;
+				color: $main-color;
+				font-weight: bold;
+			}
 		}
 	}
 	.scroll-down {
@@ -152,17 +274,32 @@ form {
 		.button {
 			width: 240px;
 			padding: 14px;
-			border-radius: 3px 3px 0 0;
+			border-radius: 25px 25px 0 0;
 			opacity: 0.7;
+			border-width: 2px;
+			border-color: rgba(255,255,255,.6);
 			// border-radius: 100px;
 		}
 	}
 }
 
 .feature-section {
-	padding: 80px 20px;
+	padding: 100px 20px;
+	&.first {
+		padding: 200px;
+		.feature-content {
+			max-width: 600px;
+			h2 {
+				// color: #fff;
+			}
+			p {
+				// color: #eee;
+				line-height: 2em;
+			}
+		}
+	}
 	&.gray {
-		background-color: #F1F1F1;
+		background-color: #f6f6f6;
 	}
 	&.dark {
 		background-color: #222222;
@@ -173,9 +310,11 @@ form {
 		.feature-content {
 			h2 {
 				color: #fff;
+				max-width: 600px;
 			}
 			p {
 				color: #eee;
+				max-width: 600px;
 			}
 		}
 	}
@@ -184,23 +323,25 @@ form {
 		color: $title-color;
 		@include font-size(36);
 		font-weight: bold;
-		margin-bottom: 40px;
+		margin-bottom: 70px;
 	}
 	.feature-content {
 		margin: 0 auto;
-		max-width: 960px;
+		max-width: 1200px;
 		text-align: center;
 		h2 {
 			text-align: center;
 			color: $title-color;
 			@include font-size(36);
 			font-weight: bold;
-			margin-bottom: 20px;
+			// margin-bottom: 20px;
+			margin: 0 auto 20px;
 		}
 		p {
 			@include font-size(18);
 			color: #777;
 			line-height: 1.6em;
+			margin: 0 auto 20px;
 		}
 		.tags {
 			text-align: left;
@@ -286,8 +427,8 @@ form {
 .service {
 	.thumbnail {
 		display: inline-block;
-		width: 90px;
-		height: 90px;
+		width: 120px;
+		height: 120px;
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -297,7 +438,7 @@ form {
 		font-weight: bold;
 		@include font-size(20);
 		color: $title-color;
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 	}
 	p.descript {
 		@include font-size(14);
@@ -311,14 +452,14 @@ form {
 	padding-top: 30px;
 	.project {
 		// height: 180px;
-		border-radius: 3px;
+		border-radius: 5px;
 		overflow: hidden;
 		margin-bottom: 20px;
 		.title {
 			padding: 8px;
 			color: #555;
 			@include easeOutSine(all, 300ms);
-			@include font-size(13);
+			@include font-size(14);
 		}
 		&:hover {
 			.title {
@@ -328,7 +469,7 @@ form {
 		.thumbnail {
 			position: relative;
 			width: 100%;
-			height: 180px;
+			height: 200px;
 			background-color: #606060;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -359,13 +500,13 @@ form {
 
 .footer {
 	margin: 0 auto;
-	max-width: 960px;
+	max-width: 1200px;
 	.logo {
 		// max-width: 240px;
 		img {
 			max-width: 240px;
 			// max-width: 100%;
-			height: 100%;
+			// height: 100%;
 			margin-bottom: 15px;
 		}
 		p {
@@ -384,19 +525,29 @@ form {
 			line-height: 40px;
 			text-align: center;
 			background-color: #aaa;
-			border-radius: 3px;
+			border-radius: 5px;
 			color: #fff;
+			a {
+				color: #fff;
+			}
 		}
 	}
 	.footer-title {
-		@include font-size(14);
-		color: $title-color;
+		@include font-size(16);
+		color: $main-color;
+		font-weight: bold;
 		margin-bottom: 20px;
 	}
 	.footer-item {
 		@include font-size(14);
 		color: #777;
 		margin-bottom: 12px;
+		a {
+			color: #777;
+			&:hover {
+				color: $main-color;
+			}
+		}
 	}
 }
 
@@ -407,10 +558,10 @@ form {
 		position: relative;
 		padding: 20px 25px;
 		margin-bottom: 36px;
-		background-color: #fff;
+		background-color: #f3f3f3;
 		color: $title-color;
 		line-height: 1.6em;
-		@include border-radius(3px);
+		@include border-radius(5px);
 		&:after {
 			position: absolute;
 			left: 20px;
@@ -418,24 +569,24 @@ form {
 			content: "";
 			height: 14px;
 			width: 14px;
-			background-color: #fff;
+			background-color: #f3f3f3;
 			@include transform(rotate(45deg));
 		}
 		.rank {
 			margin-top: 10px;
 			text-align: right;
-			color: #777;
+			color: #F39A1E;
 			@include font-size(13);
 		}
 	}
 	.profile {
 		text-align: left;
 		.company {
-			font-size: 14px;
+			font-size: 16px;
 			color: $main-color;
 		}
 		.name {
-			font-size: 14px;
+			font-size: 16px;
 			color: $title-color;
 		}
 		.thumbnail {

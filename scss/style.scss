@@ -1,3 +1,5 @@
+@import "_value";
+
 /* ==========================================================================
 
   Base Stylesheet - http://git.io/base
@@ -62,7 +64,7 @@ b, strong { @extend .strong; }
 i, em, .em { @extend .italic; }
 
 /* Links */
-a { color: #27ae61; }
+a { color: $main-color; }
 a:hover { text-decoration: none; }
 a:focus { outline: thin dotted; }
 a:active, a:hover { outline: 0; }
@@ -1201,6 +1203,6 @@ h2, h3 { page-break-after: avoid; }
 } // End Print Styles
 
 
-@import "_value";
+
 @import "_button";
 @import "_landing";
