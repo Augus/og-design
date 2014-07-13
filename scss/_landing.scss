@@ -284,6 +284,8 @@ form {
 	}
 }
 
+
+
 .feature-section {
 	padding: 100px 20px;
 	&.first {
@@ -316,6 +318,56 @@ form {
 			p {
 				color: #eee;
 				max-width: 600px;
+			}
+		}
+	}
+	&.startup-partner {
+		position: relative;
+		background-image: url(../images/startups/1.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		height: 480px;
+		&:after {
+			z-index: 1;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			content: "";
+			background: -webkit-linear-gradient(left top, #FFA26D, #3ABED0);
+			background: -moz-linear-gradient(left top, #FFA26D, #3ABED0);
+			opacity: 0.2;
+		}
+		&:before {
+			z-index: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			content: "";
+			background-color: #000;
+			opacity: 0.85;
+		}
+		.feature-title {
+			color: #fff;
+		}
+		.feature-content {
+			position: absolute;
+			top: 180px;
+			left:0;
+			right: 0;
+			h2 {
+				color: #fff;
+				max-width: 600px;
+				opacity: .9;
+			}
+			p {
+				color: #eee;
+				max-width: 600px;
+				opacity: .9;
 			}
 		}
 	}
