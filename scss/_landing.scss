@@ -1,4 +1,9 @@
-
+html,body {
+	margin:0;
+	padding:0;
+	height:100%;
+	width:100%;
+}
 
 body * {
 	font-family: $globe-font-style;
@@ -221,7 +226,10 @@ form {
 // }
 .launch-screen {
 	position: relative;
-	height: 768px;
+	// height: 768px;
+	height:100%;
+	width:100%;
+	overflow:auto;
 	background-image: url(../images/bg.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
