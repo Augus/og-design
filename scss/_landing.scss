@@ -557,14 +557,14 @@ form {
 	}
 	h4.title {
 		font-weight: bold;
-		@include font-size(20);
+		@include font-size(22);
 		color: $title-color;
 		margin-bottom: 15px;
 	}
 	p.descript {
 		@include font-size(14);
-		line-height: 1.6em;
-		color: #666;
+		line-height: 1.8em;
+		color: #777;
 	}
 }
 
