@@ -8,6 +8,7 @@
 	}
 	&:hover {
 		cursor: pointer;
+		background-color: darken($main-color, 10%);
 	}
 	&.button-block {
 		display: block;

@@ -1,0 +1,98 @@
+.contact-section {
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	overflow: auto;
+	.contact-form {
+		overflow: hidden;
+		background-color: #fff;
+		padding: 24px;
+		text-align: left;
+		border-radius: 4px;
+		overflow: hidden;
+		height: 380px; 
+		input, textarea {
+			display: block;
+			width: 100%;
+			padding: 15px;
+			border-radius: 3px;
+			margin-bottom: 0px;
+			background-color: #F5F5F5;
+			color: #333;
+			@include font-size(15);
+			&:focus {
+				outline: none;
+				box-shadow: 0 0 0 1px $main-color;
+				color: $main-color;
+			}
+		}
+		label {
+			display: block;
+			@include font-size(16);
+			margin-bottom: 12px;
+			color: $title-color;
+			font-weight: bold;
+		}
+		input {
+			height: 50px;
+		}
+		textarea {
+			margin-bottom: 16px;
+		}
+
+		.success-message {
+			padding: 64px 40px;
+			display: none;
+			color: #333;
+			text-align: center;
+			.message-icon {
+				font-size: 70px;
+				margin-bottom: 20px;
+			}
+			.message-title {
+				font-weight: bold;
+				font-size: 24px;
+			}
+			.message-content {
+				font-size: 16px;
+				line-height: 1.7em;
+			}
+		}
+
+		.contact-form-content {
+			display: block;
+		}
+
+		&.success {
+			.success-message {
+				display: block;
+			}
+			.contact-form-content {
+				display: none;
+			}
+		}
+
+	}
+	.contact-info {
+		text-align: left;
+		padding: 48px 30px;
+		height: 380px; 
+		background-color: #fff;
+		@include border-radius(5px);
+		.info-title {
+			@include font-size(24);
+			color: $title-color;
+			margin-bottom: 20px;
+			font-weight: bold;
+		}
+		.info-section {
+			margin-bottom: 35px;
+			.info-item {
+				@include font-size(14);
+				margin-bottom: 5px;
+				color: #777;
+			}
+		}
+	}
+}

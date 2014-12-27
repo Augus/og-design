@@ -113,7 +113,7 @@ form {
 	right: 0;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding-top: 80px;
+	padding-top: 30px;
 	h1.logo {
 		img {
 			width: 100%;
@@ -129,8 +129,9 @@ form {
 			margin-left: 35px;
 			@include font-size(14);
 			a {
-				color: #bbb;
+				color: #ddd;
 				text-decoration: none;
+				letter-spacing: 2px;
 			}
 			&:hover {
 				cursor: pointer;
@@ -140,9 +141,9 @@ form {
 				}
 			}
 			&.active {
-				border: 1px solid $main-color;
-				padding: 5px 13px;
-				border-radius: 5px;
+				border: 2px solid $main-color;
+				padding: 5px 20px;
+				border-radius: 50px;
 				a {
 					color: $main-color;
 				}
@@ -230,7 +231,7 @@ form {
 	height:100%;
 	width:100%;
 	overflow:auto;
-	background-image: url(../images/bg.jpg);
+	background-image: url(../images/background2.jpeg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -264,22 +265,24 @@ form {
 		z-index: 3;
 		position: absolute;
 		top: 50%;
-		left: 0;
+		left: 50%;
 		right: 0;
-		margin-top: -100px;
+		// margin-top: -100px;
 		text-align: center;
 		color: #fff;
+		@include transform(translateX(-50%) translateY(-50%));
 		p {
 			margin: 0 auto;
 			max-width: 600px;
 			font-size: 18px;
 			line-height: 2em;
-			color: rgba(255, 255, 255, .7);
+			color: rgba(255, 255, 255, .85);
 			margin-top: 6em;
+			letter-spacing: .5px;
 			strong {
 				margin: 0 5px;
 				color: $main-color;
-				font-weight: bold;
+				font-weight: normal;
 			}
 		}
 	}
@@ -384,7 +387,7 @@ form {
 				max-width: 600px;
 			}
 			p {
-				color: #eee;
+				color: #ddd;
 				max-width: 600px;
 			}
 		}
@@ -463,6 +466,7 @@ form {
 			color: #777;
 			line-height: 1.6em;
 			margin: 0 auto 20px;
+			max-width: 600px;
 		}
 		.tags {
 			text-align: left;
@@ -584,7 +588,7 @@ form {
 		}
 		&:hover {
 			.title {
-				color: $green-color;
+				color: #fff;
 			}
 		}
 		.thumbnail {
@@ -605,7 +609,7 @@ form {
 				bottom: 0;
 				content: "";
 				background-color: #000;
-				opacity: 0.65;
+				opacity: 0.45;
 				@include easeOutCirc(all, 2500ms);
 			}
 			&:hover {
@@ -621,11 +625,14 @@ form {
 
 .footer {
 	margin: 0 auto;
+	padding: 60px 20px 40px;
 	max-width: 1200px;
 	.logo {
 		// max-width: 240px;
 		img {
-			max-width: 240px;
+			width: 160px;
+			height: auto;
+			// max-width: 160px;
 			// max-width: 100%;
 			// height: 100%;
 			margin-bottom: 15px;
@@ -655,14 +662,14 @@ form {
 	}
 	.footer-title {
 		@include font-size(16);
-		color: $main-color;
+		color: #000;
 		font-weight: bold;
 		margin-bottom: 20px;
 	}
 	.footer-item {
 		@include font-size(14);
 		color: #777;
-		margin-bottom: 12px;
+		margin-bottom: 8px;
 		a {
 			color: #777;
 			&:hover {
