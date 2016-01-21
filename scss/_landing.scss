@@ -613,7 +613,7 @@ form {
 				bottom: 0;
 				content: "";
 				background-color: #000;
-				opacity: 0.45;
+				opacity: 0.4;
 				@include easeOutCirc(all, 2500ms);
 			}
 			&:hover {
