@@ -4,7 +4,7 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	overflow: auto;
-    background-attachment: fixed;
+    // background-attachment: fixed;
 	.contact-form {
 		overflow: hidden;
 		background-color: #fff;
@@ -24,8 +24,9 @@
 			@include font-size(14);
 			&:focus {
 				outline: none;
-				box-shadow: 0 0 0 1px $main-color;
-				color: $main-color;
+				border-color: #333;
+				// box-shadow: 0 0 0 1px $main-color;
+				// color: $main-color;
 			}
 		}
 		label {
@@ -48,16 +49,17 @@
 			color: #333;
 			text-align: center;
 			.message-icon {
-				font-size: 70px;
-				margin-bottom: 20px;
+			    margin-bottom: 20px;
 			}
 			.message-title {
 				font-weight: bold;
-				font-size: 24px;
+				font-size: 20px;
+				color: #333;
 			}
 			.message-content {
 				font-size: 16px;
 				line-height: 1.7em;
+			    color: #777;
 			}
 		}
 
@@ -84,7 +86,7 @@
 		.info-title {
 			@include font-size(20);
 			color: $title-color;
-			margin-bottom: 20px;
+			margin-bottom: 12px;
 			font-weight: bold;
 		}
 		.info-section {
@@ -95,7 +97,9 @@
 				color: #777;
 				a {
 					color: #6a6a6a;
-					text-decoration: underline;
+					&:hover {
+						text-decoration: underline;
+					}
 				}
 			}
 		}

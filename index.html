@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="" ng-app="ogdesign" ng-controller="RootController" ng-class="{'player-open': isOpenPlayer}" ng-cloak>
     <!-- 啟動面 -->
     <div class="launch-screen">
         <!-- Video -->
@@ -66,14 +66,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="scroll-down">
-            <div class="button button-light button-outline">了解更多</div>
-        </div> -->
-        <!-- <div class="feature-section first">
-            <div class="feature-content">
-                <p>奧革設計是一家提供全面設計服務的公司，專注於使用性（Usability）優化以及網頁/行動應用界面設計。全力幫助新創產業服務是我們創立的理念，我們樂意為各類客戶提供具創新的解決方案。</p>
-            </div>
-        </div> -->
     </div>
     <div class="">
         <!-- 服務項目 -->
@@ -113,7 +105,7 @@
                 <div class="gallery">
                     <div class="row clear">
                         <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/33133945/Cupoy-" target="_blank">
+                            <a ng-click="openPlayer('images/portfolio/full/cupoy_web.jpg')">
                                 <div class="project">
                                     <div class="thumbnail" style="background-image: url(images/portfolio/cupoy_web.jpg)">
                                     </div>
@@ -122,7 +114,7 @@
                             </a>
                         </div>
                         <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/33088551/Cupoy-" target="_blank">
+                            <a ng-click="openPlayer('images/portfolio/full/cupoy_ios.jpg')">
                                 <div class="project">
                                     <div class="thumbnail" style="background-image: url(images/portfolio/cupoy_ios.jpg)">
                                     </div>
@@ -131,7 +123,7 @@
                             </a>
                         </div>
                         <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/33098015/Cupoy-iOS-Extension-Design" target="_blank">
+                            <a ng-click="openPlayer('images/portfolio/full/cupoy_ios_extension.jpg')">
                                 <div class="project">
                                     <div class="thumbnail" style="background-image: url(images/portfolio/cupoy_ios_extension.jpg)">
                                     </div>
@@ -140,7 +132,7 @@
                             </a>
                         </div>
                         <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/33013877/CUPOY-Email-Template-Design" target="_blank">
+                            <a ng-click="openPlayer('images/portfolio/full/cupoy_email_template.jpg')">
                                 <div class="project">
                                     <div class="thumbnail" style="background-image: url(images/portfolio/cupoy_email_template.jpg)">
                                     </div>
@@ -149,7 +141,7 @@
                             </a>
                         </div>
                         <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/29108653/-App-Design" target="_blank">
+                            <a ng-click="openPlayer('images/portfolio/full/smarttrip.jpg')">
                                 <div class="project">
                                     <div class="thumbnail" style="background-image: url(images/portfolio/smarttrip.jpg)">
                                     </div>
@@ -158,7 +150,7 @@
                             </a>
                         </div>
                         <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/32197027/Clipo-" target="_blank">
+                            <a ng-click="openPlayer('images/portfolio/full/clipo.jpg')">
                                 <div class="project">
                                     <div class="thumbnail" style="background-image: url(images/portfolio/clipo.jpg)">
                                     </div>
@@ -167,7 +159,7 @@
                             </a>
                         </div>
                         <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/21779137/_" target="_blank">
+                            <a ng-click="openPlayer('images/portfolio/full/金色三麥.jpg')">
                                 <div class="project">
                                     <div class="thumbnail" style="background-image: url(images/portfolio/金色三麥.jpg)">
                                     </div>
@@ -176,16 +168,7 @@
                             </a>
                         </div>
                         <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/32127645/_" target="_blank">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/豐盛.jpg)">
-                                    </div>
-                                    <div class="title">豐盛智匯</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/21761595/ooDeco-redesign-conpect" target="_blank">
+                            <a ng-click="openPlayer('images/portfolio/full/oodeco.jpg')">
                                 <div class="project">
                                     <div class="thumbnail" style="background-image: url(images/portfolio/oodesign.jpg)">
                                     </div>
@@ -194,7 +177,16 @@
                             </a>
                         </div>
                         <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/29133641/CUPOY-" target="_blank">
+                            <a ng-click="openPlayer('images/portfolio/full/豐盛.jpg')">
+                                <div class="project">
+                                    <div class="thumbnail" style="background-image: url(images/portfolio/豐盛.jpg)">
+                                    </div>
+                                    <div class="title">豐盛智匯</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col col-3">
+                            <a ng-click="openPlayer('images/portfolio/full/CUPOYV5.jpg')">
                                 <div class="project">
                                     <div class="thumbnail" style="background-image: url(images/portfolio/CUPOYV5.jpg)">
                                     </div>
@@ -203,7 +195,7 @@
                             </a>
                         </div>
                         <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/19642743/Jibao-App-Design" target="_blank">
+                            <a ng-click="openPlayer('images/portfolio/full/Jibaoapp.jpg', true)">
                                 <div class="project">
                                     <div class="thumbnail" style="background-image: url(images/portfolio/Jibaoapp.jpg)">
                                     </div>
@@ -212,47 +204,11 @@
                             </a>
                         </div>
                         <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/21758389/Cupoy-app-redesign" target="_blank">
+                            <a ng-click="openPlayer('images/portfolio/full/AIESEC.jpg', true)">
                                 <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/cupoy_app.jpg)">
+                                    <div class="thumbnail" style="background-image: url(images/portfolio/AIESEC.png)">
                                     </div>
-                                    <div class="title">Cupoy</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/10787507/Reader-App-Concept" target="_blank">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/reeder.jpg)">
-                                    </div>
-                                    <div class="title">Reeder - 閱讀器設計</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/15954981/Flat-Calculator-Design" target="_blank">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/calculator.jpg)">
-                                    </div>
-                                    <div class="title">Flat Calcutor</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/15983857/Evernote-Redesign-Flat-Conpect" target="_blank">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/evernote.jpg)">
-                                    </div>
-                                    <div class="title">Evernote Redesign</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a href="https://www.behance.net/gallery/16353827/Line-Redesign" target="_blank">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/line.jpg)">
-                                    </div>
-                                    <div class="title">Line Redesign</div>
+                                    <div class="title">AIESEC Taiwan</div>
                                 </div>
                             </a>
                         </div>
@@ -312,15 +268,17 @@
                     <div class="col col-6 push-1 mobile-full no-mobile">
                         <div class="contact-form">
                             <div class="success-message">
-                                <div class="message-icon"><i class="icon-check"></i></div>
-                                <h4 class="message-title">訊息已經成功發送</h4>
-                                <p class="message-content">我們將會盡快與為您聯絡，謝謝。</p>
+                                <div class="message-icon">
+                                    <img src="images/success.svg">
+                                </div>
+                                <h4 class="message-title">感謝您的來信</h4>
+                                <p class="message-content">我們將會盡快與為您聯繫，謝謝。</p>
                             </div>
                             <div class="contact-form-content">
                                 <div class="row">
                                     <div class="col col-6">
                                         <label for="">稱呼</label>
-                                        <input id="name" maxlength="40" name="first_name" size="20" type="text" placeholder="奧革士" required/>
+                                        <input id="name" maxlength="40" name="first_name" size="20" type="text" placeholder="" required/>
                                         <br>
                                     </div>
                                     <div class="col col-6">
@@ -331,10 +289,10 @@
                                 </div>
                                 <div class="row">
                                     <div class="col col-12">
-                                        <label for="">填寫內容</label>
+                                        <label for="">告訴我們您的需求</label>
                                         <textarea id="message" name="message" rows="4" type="text" wrap="soft" placeholder="" required></textarea>
-                                        <button id="submit-contact" type="submit" name="submit" class="button large rounded blue right" value="提交內容">寄送內容</button>
-                                        <button id="submitting-contact" class="button large rounded blue right hide" value="提交內容"><i class="icon-spin5 animate-spin"></i> 寄送中</button>
+                                        <button id="submit-contact" type="submit" name="submit" class="button large rounded blue right" value="提交內容">送出表單</button>
+                                        <button id="submitting-contact" class="button large rounded blue right hide" value="提交內容"><i class="icon-spin5 animate-spin"></i> 正在寄送</button>
                                     </div>
                                 </div>
                             </div>
@@ -404,9 +362,49 @@
             </div>
         </div>
     </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    
+    <div class="close-btn" ng-hide="!isOpenPlayer" ng-click="closePlayer()">✕</div>
+    <div class="player" ng-class="{'open': isOpenPlayer}" ng-click="closePlayer()">
+        <div class="content" ng-click="$event.stopPropagation()" ng-class="{'small': isSmall}">
+            <img ng-if="current" ng-src="{{current}}" ng-class="{'show': current && isOpenPlayer}">
+        </div>
+    </div>
+    <div class="player-overlay" ng-click="closePlayer()"></div>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/mousetrap.min.js"></script>
     <script src="js/default.js"></script>
     <div id="fb-root"></div>
+    
+    <script>
+        var app = angular.module("ogdesign", []);
+        app.controller("RootController", function ($scope, $timeout) {
+
+            Mousetrap.bind('esc', function(e) {
+                $scope.$apply(function () {
+                    $scope.closePlayer();
+                });
+            });
+
+            $scope.isOpenPlayer = false;
+            $scope.openPlayer = function (url, isSmall) {
+                $scope.isOpenPlayer = true;
+                $scope.isSmall = !!isSmall;
+                $timeout(function () {
+                    $scope.current = url;
+                }, 500);
+            };
+            $scope.closePlayer = function () {
+                $scope.isOpenPlayer = false;  
+                // if (url != $scope.current) {
+                $scope.current = undefined;
+                // }
+            };
+        });
+    </script>
+
+
     <script>
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
