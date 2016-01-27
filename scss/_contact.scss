@@ -83,6 +83,7 @@
 		height: 380px; 
 		background-color: #fff;
 		@include border-radius(5px);
+		overflow: hidden;
 		.info-title {
 			@include font-size(20);
 			color: $title-color;
