@@ -374,13 +374,21 @@
     
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/angular-google-analytics.min.js"></script>
     <script src="js/mousetrap.min.js"></script>
     <script src="js/default.js"></script>
     <div id="fb-root"></div>
     
     <script>
-        var app = angular.module("ogdesign", []);
-        app.controller("RootController", function ($scope, $timeout) {
+        var app = angular.module("ogdesign", ['angular-google-analytics']);
+
+        app.config(function(AnalyticsProvider) {
+            AnalyticsProvider.setAccount([
+               { tracker: 'UA-52653674-2', name: "tracker" }
+            ]);
+        });
+
+        app.controller("RootController", function ($scope, $timeout, Analytics) {
 
             Mousetrap.bind('esc', function(e) {
                 $scope.$apply(function () {
@@ -390,6 +398,7 @@
 
             $scope.isOpenPlayer = false;
             $scope.openPlayer = function (url, isSmall) {
+                Analytics.trackEvent('Portfolio', 'View', url);
                 $scope.isOpenPlayer = true;
                 $scope.isSmall = !!isSmall;
                 $timeout(function () {
@@ -455,6 +464,15 @@
     <script type="text/javascript">
     $(document).ready(function() {
         $("#submitting-contact").hide();
+        $('#name').on('focus', function () {
+            Analytics.trackEvent('Contact', 'Focus-Name');
+        });
+        $('#email').on('focus', function () {
+            Analytics.trackEvent('Contact', 'Focus-Email');
+        });
+        $('#message').on('focus', function () {
+            Analytics.trackEvent('Contact', 'Focus-Message');
+        });
         $('#submit-contact').on("click", function(evt) {
             evt.preventDefault(); // Don't do default action
 
@@ -484,7 +502,8 @@
                 $('#email').val("");
                 $('.contact-form').addClass("success");
                 // alert('Successfully submitted ticket!'); // You might want to redirect the user here, or show a stylized message to them.
-            })
+            });
+            Analytics.trackEvent('Contact', 'Send', name + '/' + email + '/' + message);
         });
     });
     </script>
