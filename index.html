@@ -24,7 +24,7 @@
 
 <body class="" ng-app="ogdesign" ng-controller="RootController" ng-class="{'player-open': isOpenPlayer}" ng-cloak>
     <!-- 啟動面 -->
-    <div class="launch-screen">
+    <div id="launch-screen" class="launch-screen">
         <!-- Video -->
         <div class="video-container">
             <video autoplay="" loop="" muted="" id="" class="video">
@@ -70,7 +70,7 @@
     </div>
     <div class="">
         <!-- 服務項目 -->
-        <div class="feature-section">
+        <div id="services" class="feature-section">
             <div class="feature-content">
                 <h2 class="feature-title">服務項目</h2>
                 <p>從使用者需求出發，創造最好的產品體驗！</p>
@@ -99,7 +99,7 @@
             </div>
         </div>
         <!-- 案例展示 -->
-        <div class="feature-section dark">
+        <div id="showcases" class="feature-section dark">
             <div class="feature-content">
                 <h2>設計案例</h2>
                 <p>我們對於每一項作品，都盡全力去執行，並且將做到最高品質。</p>
@@ -219,7 +219,7 @@
             </div>
         </div>
         <!-- 合作夥伴 -->
-        <div class="feature-section gray">
+        <div id="testimonials" class="feature-section gray">
             <div class="feature-content">
                 <h2 class="feature-title">我們的夥伴怎麼說</h2>
                 <p>與客戶團隊一起成長、進步，創造最好的產品體驗。</p>
@@ -321,7 +321,7 @@
             </div>
         </div>
         <!-- Footer -->
-        <div class="footer-wrap">
+        <div id="footer" class="footer-wrap">
             <div class="footer feature-section">
                 <div class="row clear">
                     <div class="col col-5 logo">
@@ -378,6 +378,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/angular-google-analytics.min.js"></script>
+    <script src="js/jquery.scrolldepth.min.js"></script>
     <script src="js/mousetrap.min.js"></script>
     <script src="js/default.js"></script>
     <div id="fb-root"></div>
@@ -446,6 +447,10 @@
     ga('send', 'pageview');
     </script>
     <script>
+    $(function() {
+      $.scrollDepth();
+      $.scrollDepth.addElements(['#launch-screen', '#services', '#showcases', '#testimonials', '#contact', '#footer']);
+    });
     $(function() {
         $(function() {
             $('a[href*=#]:not([href=#])').click(function() {
