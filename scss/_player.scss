@@ -53,6 +53,23 @@ body {
 		&.small {
 			width: 768px;
 		}
+		.loader{
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			@include transform(translateX(-50%) translateY(-50%));
+		  height: 100px;
+		  width: 20%;
+		  text-align: center;
+		  padding: 1em;
+		  margin: 0 auto 1em;
+		  display: inline-block;
+		  vertical-align: top;
+		}
+		svg path,
+		svg rect{
+		  fill: $main-color;
+		}
 		img {
 			max-width: 100%;
 			visibility: hidden;
@@ -85,6 +102,34 @@ body {
 		cursor: pointer;
 		opacity: 1;
 	}
+}
+
+.prev-btn, .next-btn {
+	z-index: 10000;
+	position: fixed;
+	top: 50%;
+	@include transform(translateY(-50%));
+	text-align: center;
+	height: 200px;
+	width: 60px;
+	line-height: 200px;
+	color: #fff;
+	background-color: rgba(#fff, 0.1);
+	font-size: 36px;
+	opacity: 0.6;
+	transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+	&:hover {
+		cursor: pointer;
+		opacity: 1;
+	}
+}
+
+.prev-btn {
+	left: 0;
+}
+
+.next-btn {
+	right: 0;
 }
 
 .player-overlay {

@@ -9,7 +9,6 @@
     <meta name="keywords" content="使用者經驗設計,網頁設計,新創" />
     <title>奧革設計 - 新創團隊的設計夥伴</title>
     <meta name="description" content="奧革設計是一家使用者介面設計及使用者經驗諮詢公司，我們擅長透過設計新思維創造最好的產品體驗。">
-    
     <meta property="og:site_name" content="奧革設計" />
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://www.ogdesign.tw/">
@@ -17,7 +16,6 @@
     <meta property="og:image" content="http://www.ogdesign.tw/images/og-image.jpg" />
     <meta property="og:description" content="奧革設計是一家使用者介面設計及使用者經驗諮詢公司，我們擅長透過設計新思維創造最好的產品體驗。" />
     <meta property="og:locale" content="zh_TW">
-
     <link rel="shortcut icon" href="images/favicon.png">
     <link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
@@ -28,7 +26,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="" ng-app="ogdesign" ng-controller="RootController" ng-class="{'player-open': isOpenPlayer}" ng-cloak>
+<body class="" ng-app="ogdesign" ng-controller="RootController" ng-class="{'player-open': isOpenPlayer}" ng-cloak mousetrap="{'esc': closePlayer, 'right': next, 'left': prev}">
     <!-- 啟動面 -->
     <div id="launch-screen" class="launch-screen">
         <!-- Video -->
@@ -111,111 +109,12 @@
                 <p>我們對於每一項作品，都盡全力去執行，並且將做到最高品質。</p>
                 <div class="gallery">
                     <div class="row clear">
-                        <div class="col col-3">
-                            <a ng-click="openPlayer('images/portfolio/full/cupoy_web.jpg')">
+                        <div class="col col-3" ng-repeat="porfolio in porfolios">
+                            <a ng-click="openPlayer(porfolio, $index)">
                                 <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/cupoy_web.jpg)">
+                                    <div class="thumbnail" style="background-image: url(images/portfolio/{{porfolio.thumbnail}})">
                                     </div>
-                                    <div class="title">Cupoy - 網站設計</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a ng-click="openPlayer('images/portfolio/full/cupoy_ios.jpg')">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/cupoy_ios.jpg)">
-                                    </div>
-                                    <div class="title">Cupoy - 傳遞知識的最佳解決方案</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a ng-click="openPlayer('images/portfolio/full/cupoy_ios_extension.jpg')">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/cupoy_ios_extension.jpg)">
-                                    </div>
-                                    <div class="title">Cupoy - iOS Extension Design</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a ng-click="openPlayer('images/portfolio/full/cupoy_email_template.jpg')">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/cupoy_email_template.jpg)">
-                                    </div>
-                                    <div class="title">CUPOY - Email Template Design</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a ng-click="openPlayer('images/portfolio/full/smarttrip.jpg')">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/smarttrip.jpg)">
-                                    </div>
-                                    <div class="title">台灣智慧觀光</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a ng-click="openPlayer('images/portfolio/full/clipo.jpg')">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/clipo.jpg)">
-                                    </div>
-                                    <div class="title">Clipo - 收藏、整理有趣的資訊</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a ng-click="openPlayer('images/portfolio/full/金色三麥.jpg')">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/金色三麥.jpg)">
-                                    </div>
-                                    <div class="title">金色三麥</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a ng-click="openPlayer('images/portfolio/full/oodeco.jpg')">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/oodesign.jpg)">
-                                    </div>
-                                    <div class="title">ooDesign</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a ng-click="openPlayer('images/portfolio/full/豐盛.jpg')">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/豐盛.jpg)">
-                                    </div>
-                                    <div class="title">豐盛智匯</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a ng-click="openPlayer('images/portfolio/full/CUPOYV5.jpg')">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/CUPOYV5.jpg)">
-                                    </div>
-                                    <div class="title">CUPOY v5</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a ng-click="openPlayer('images/portfolio/full/Jibaoapp.jpg', true)">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/Jibaoapp.jpg)">
-                                    </div>
-                                    <div class="title">吉寶知識系統</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col col-3">
-                            <a ng-click="openPlayer('images/portfolio/full/AIESEC.jpg', true)">
-                                <div class="project">
-                                    <div class="thumbnail" style="background-image: url(images/portfolio/AIESEC.jpg)">
-                                    </div>
-                                    <div class="title">AIESEC Taiwan</div>
+                                    <div class="title">{{porfolio.name}}</div>
                                 </div>
                             </a>
                         </div>
@@ -354,33 +253,42 @@
                     </div>
                     <div class="col col-3 contact">
                         <h4 class="footer-title">聯絡我們</h4>
-                        <!-- <div class="socials-contact"> -->
-                        <!-- <a href="https://www.facebook.com/ogdesign.tw" target="_blank" class="social-item"><i class="icon-facebook"></i></a> -->
-                        <!-- <a href="https://www.facebook.com/ogdesign.tw" target="_blank" class="social-item"><i class="icon-twitter"></i></a> -->
-                        <!-- <a href="https://www.facebook.com/ogdesign.tw" target="_blank" class="social-item"><i class="icon-gplus"></i></a> -->
-                        <!-- <a href="https://www.facebook.com/ogdesign.tw" target="_blank" class="social-item"><i class="icon-linkedin"></i></a> -->
-                        <!-- </div> -->
                         <div class="footer-item"><a href="https://www.facebook.com/ogdesign.tw">粉絲團</a>
                         </div>
-                        <div class="footer-item">聯絡電話 : <a href="tel:+0927598161">0927-598-161</a>
+                        <div class="footer-item">電話 : <a href="tel:+0927598161">0927-598-161</a>
                         </div>
                         <div class="footer-item">電子郵件 : <a href="mailto:augus@ogdesign.tw">augus@ogdesign.tw</a>
                         </div>
-                        <!-- <div class="footer-item">公司地址：台北市新生北路一段3號4樓</div> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
     <div class="close-btn" ng-hide="!isOpenPlayer" ng-click="closePlayer()">✕</div>
-    <div class="player" ng-class="{'open': isOpenPlayer}" ng-click="closePlayer()">
-        <div class="content" ng-click="$event.stopPropagation()" ng-class="{'small': isSmall}">
-            <img ng-if="current" ng-src="{{current}}" ng-class="{'show': current && isOpenPlayer}">
+    <div class="next-btn" ng-hide="!isOpenPlayer" ng-click="next()">›</div>
+    <div class="prev-btn" ng-hide="!isOpenPlayer" ng-click="prev()">‹</div>
+    <div id="player" class="player" ng-class="{'open': isOpenPlayer}" ng-click="closePlayer()">
+        <div ng-show="current == porfolio" ng-repeat="porfolio in porfolios" class="content" ng-click="$event.stopPropagation()" ng-class="{'small': isSmall}">
+            <div class="loader" title="5">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                    <rect x="0" y="13" width="4" height="5" fill="#333">
+                        <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0s" dur="0.6s" repeatCount="indefinite" />
+                        <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0s" dur="0.6s" repeatCount="indefinite" />
+                    </rect>
+                    <rect x="10" y="13" width="4" height="5" fill="#333">
+                        <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+                        <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+                    </rect>
+                    <rect x="20" y="13" width="4" height="5" fill="#333">
+                        <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+                        <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+                    </rect>
+                </svg>
+            </div>
+            <img ng-if="current == porfolio" ng-src="images/portfolio/full/{{porfolio.full}}" ng-class="{'show': porfolio.full && isOpenPlayer}">
         </div>
     </div>
     <div class="player-overlay" ng-click="closePlayer()"></div>
-    
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/angular-google-analytics.min.js"></script>
@@ -389,43 +297,9 @@
     <script src="js/default.js"></script>
     <script src="js/fastclick.js"></script>
     <div id="fb-root"></div>
-    
     <script>
-        var app = angular.module("ogdesign", ['angular-google-analytics']);
-
-        app.config(function(AnalyticsProvider) {
-            AnalyticsProvider.setAccount([
-               { tracker: 'UA-52653674-2', name: "tracker" }
-            ]);
-        });
-
-        app.controller("RootController", function ($scope, $timeout, Analytics) {
-
-            Mousetrap.bind('esc', function(e) {
-                $scope.$apply(function () {
-                    $scope.closePlayer();
-                });
-            });
-
-            $scope.isOpenPlayer = false;
-            $scope.openPlayer = function (url, isSmall) {
-                Analytics.trackEvent('Portfolio', 'View', url);
-                $scope.isOpenPlayer = true;
-                $scope.isSmall = !!isSmall;
-                $timeout(function () {
-                    $scope.current = url;
-                }, 500);
-            };
-            $scope.closePlayer = function () {
-                $scope.isOpenPlayer = false;  
-                // if (url != $scope.current) {
-                $scope.current = undefined;
-                // }
-            };
-        });
+    
     </script>
-
-
     <script>
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -455,8 +329,8 @@
     </script>
     <script>
     $(function() {
-      $.scrollDepth();
-      $.scrollDepth.addElements(['#launch-screen', '#services', '#showcases', '#testimonials', '#contact', '#footer']);
+        $.scrollDepth();
+        $.scrollDepth.addElements(['#launch-screen', '#services', '#showcases', '#testimonials', '#contact', '#footer']);
     });
     $(function() {
         $(function() {
@@ -482,13 +356,13 @@
         FastClick.attach(document.body);
 
         $("#submitting-contact").hide();
-        $('#name').on('focus', function () {
+        $('#name').on('focus', function() {
             Analytics.trackEvent('Contact', 'Focus-Name');
         });
-        $('#email').on('focus', function () {
+        $('#email').on('focus', function() {
             Analytics.trackEvent('Contact', 'Focus-Email');
         });
-        $('#message').on('focus', function () {
+        $('#message').on('focus', function() {
             Analytics.trackEvent('Contact', 'Focus-Message');
         });
         $('#submit-contact').on("click", function(evt) {
