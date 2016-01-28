@@ -270,7 +270,10 @@
     <div class="prev-btn" ng-hide="!isOpenPlayer" ng-click="prev()">‹</div>
     <div id="player" class="player" ng-class="{'open': isOpenPlayer}" ng-click="closePlayer()">
         <div ng-show="current == porfolio" ng-repeat="porfolio in porfolios" class="content" ng-click="$event.stopPropagation()" ng-class="{'small': isSmall}">
-            <div class="spinner"></div>
+            <div class="spinner">
+              <div class="double-bounce1"></div>
+              <div class="double-bounce2"></div>
+            </div>
             <img ng-if="current == porfolio" ng-src="images/portfolio/full/{{porfolio.full}}" ng-class="{'show': porfolio.full && isOpenPlayer}">
         </div>
     </div>
