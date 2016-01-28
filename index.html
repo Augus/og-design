@@ -387,6 +387,7 @@
     <script src="js/jquery.scrolldepth.min.js"></script>
     <script src="js/mousetrap.min.js"></script>
     <script src="js/default.js"></script>
+    <script src="js/fastclick.js"></script>
     <div id="fb-root"></div>
     
     <script>
@@ -477,6 +478,9 @@
     </script>
     <script type="text/javascript">
     $(document).ready(function() {
+
+        FastClick.attach(document.body);
+
         $("#submitting-contact").hide();
         $('#name').on('focus', function () {
             Analytics.trackEvent('Contact', 'Focus-Name');
