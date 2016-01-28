@@ -1,3 +1,38 @@
+
+
+.spinner {
+  position: absolute;
+top: 50%;
+left: 50%;
+margin-top: -20px;
+margin-left: -20px;
+	width: 40px;
+	height: 40px;
+  background-color: #fff;
+
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
 body {
 	&.player-open {
 		overflow: hidden;
@@ -52,23 +87,6 @@ body {
 		box-shadow: 0 0 10px #000, 0 0 20px rgba(#000, 0.2);
 		&.small {
 			width: 768px;
-		}
-		.loader{
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			@include transform(translateX(-50%) translateY(-50%));
-		  height: 100px;
-		  width: 20%;
-		  text-align: center;
-		  padding: 1em;
-		  margin: 0 auto 1em;
-		  display: inline-block;
-		  vertical-align: top;
-		}
-		svg path,
-		svg rect{
-		  fill: $main-color;
 		}
 		img {
 			max-width: 100%;
