@@ -154,12 +154,6 @@ app.controller("RootController", function($scope, $timeout, Analytics) {
             name: "豐盛智匯",
             isSmall: false
         },
-        // {
-        //     thumbnail: "CUPOYV5.jpg",
-        //     full: "CUPOYV5.jpg",
-        //     name: "CUPOY alpha",
-        //     isSmall: false
-        // },
         {
             thumbnail: "Jibaoapp.jpg",
             full: "Jibaoapp.jpg",

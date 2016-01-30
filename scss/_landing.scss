@@ -653,6 +653,8 @@ form {
 		.title {
 			padding: 8px;
 			color: #555;
+			line-height: 1.4em;
+		    max-height: 1.4em;
 			@include easeOutSine(all, 300ms);
 			@include font-size(14);
 		}
@@ -669,6 +671,8 @@ form {
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center;
+			border-radius: 5px;
+			overflow: hidden;
 			@include easeOutSine(all, 300ms);
 			&:after {
 				z-index: 1;
