@@ -651,7 +651,8 @@ form {
 		overflow: hidden;
 		margin-bottom: 20px;
 		.title {
-			padding: 8px;
+			margin: 8px 0;
+			padding: 0 8px;
 			color: #555;
 			line-height: 1.4em;
 		    max-height: 1.4em;
