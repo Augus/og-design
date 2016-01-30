@@ -95,6 +95,18 @@ app.controller("RootController", function($scope, $timeout, Analytics) {
     // 作品
     $scope.porfolios = [
         {
+            thumbnail: "智慧觀光Web.jpg",
+            full: "智慧觀光Web.jpg",
+            name: "台灣智慧觀光 - 網站設計",
+            isSmall: false
+        },
+        {
+            thumbnail: "smarttrip.jpg",
+            full: "smarttrip.jpg",
+            name: "台灣智慧觀光 - App 設計",
+            isSmall: false
+        },
+        {
             thumbnail: "cupoy_web.jpg",
             full: "cupoy_web.jpg",
             name: "Cupoy - 網站設計",
@@ -116,12 +128,6 @@ app.controller("RootController", function($scope, $timeout, Analytics) {
             thumbnail: "cupoy_email_template.jpg",
             full: "cupoy_email_template.jpg",
             name: "CUPOY - Email Template Design",
-            isSmall: false
-        },
-        {
-            thumbnail: "smarttrip.jpg",
-            full: "smarttrip.jpg",
-            name: "台灣智慧觀光",
             isSmall: false
         },
         {
@@ -148,12 +154,12 @@ app.controller("RootController", function($scope, $timeout, Analytics) {
             name: "豐盛智匯",
             isSmall: false
         },
-        {
-            thumbnail: "CUPOYV5.jpg",
-            full: "CUPOYV5.jpg",
-            name: "CUPOY alpha",
-            isSmall: false
-        },
+        // {
+        //     thumbnail: "CUPOYV5.jpg",
+        //     full: "CUPOYV5.jpg",
+        //     name: "CUPOY alpha",
+        //     isSmall: false
+        // },
         {
             thumbnail: "Jibaoapp.jpg",
             full: "Jibaoapp.jpg",
