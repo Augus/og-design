@@ -655,7 +655,7 @@ form {
 			padding: 0 8px;
 			color: #555;
 			line-height: 1.4em;
-		    max-height: 1.4em;
+		    max-height: 14px;
 			@include easeOutSine(all, 300ms);
 			@include font-size(14);
 		}
