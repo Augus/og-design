@@ -1,6 +1,10 @@
 var app = angular.module("ogdesign", ['angular-google-analytics']);
 
-app.config(function(AnalyticsProvider) {
+app.config(function($locationProvider, AnalyticsProvider) {
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
     AnalyticsProvider.setAccount([{
         tracker: 'UA-52653674-2',
         name: "tracker"
@@ -49,48 +53,7 @@ app.directive('mousetrap', function () {
 });
 
 
-app.controller("RootController", function($scope, $timeout, Analytics) {
-
-    $scope.isOpenPlayer = false;
-
-    $scope.openPlayer = function(portfolio, index) {
-        $scope.isOpenPlayer = true;
-        $scope.goto(portfolio, index);
-    };
-
-    $scope.closePlayer = function() {
-        $scope.isOpenPlayer = false;
-        $scope.current = undefined;
-    };
-
-    $scope.goto = function (portfolio, index) {
-        Analytics.trackEvent('Portfolio', 'View', portfolio.name);
-        if ($scope.current) {
-            $scope.current.scrollTop = $("#player").scrollTop();
-        }
-        $scope.currentIndex = index;
-        $scope.current = portfolio;
-        $scope.isSmall = portfolio.isSmall;
-        $("#player").scrollTop($scope.current.scrollTop || 0);
-    };
-
-    $scope.next = function () {
-        if ($scope.currentIndex + 1 <= $scope.porfolios.length - 1) {
-            $scope.goto($scope.porfolios[$scope.currentIndex + 1], $scope.currentIndex + 1);
-        }
-        else {
-            $scope.goto($scope.porfolios[0], 0);
-        }
-    };
-
-    $scope.prev = function () {
-        if ($scope.currentIndex - 1 > 0) {
-            $scope.goto($scope.porfolios[$scope.currentIndex - 1], $scope.currentIndex - 1);
-        }
-        else {
-            $scope.goto($scope.porfolios[$scope.porfolios.length - 1], $scope.porfolios.length - 1);
-        }
-    };
+app.controller("RootController", function($scope, $timeout, Analytics, $location) {
 
     // 作品
     $scope.porfolios = [
@@ -167,4 +130,52 @@ app.controller("RootController", function($scope, $timeout, Analytics) {
             isSmall: true
         },
     ];
+    $scope.isOpenPlayer = false;
+    $scope.portfolio = $location.search().portfolio;
+
+    $scope.openPlayer = function(portfolio, index) {
+        $scope.isOpenPlayer = true;
+        $scope.goto(portfolio, index);
+    };
+
+    $scope.closePlayer = function() {
+        $scope.isOpenPlayer = false;
+        $scope.current = undefined;
+        $location.search('portfolio', null);
+    };
+
+    $scope.goto = function (portfolio, index) {
+        Analytics.trackEvent('Portfolio', 'View', portfolio.name);
+        if ($scope.current) {
+            $scope.current.scrollTop = $("#player").scrollTop();
+        }
+        $scope.currentIndex = index;
+        $scope.current = portfolio;
+        $scope.isSmall = portfolio.isSmall;
+        $("#player").scrollTop($scope.current.scrollTop || 0);
+        $location.search('portfolio', index);
+    };
+
+    $scope.next = function () {
+        if ($scope.currentIndex + 1 <= $scope.porfolios.length - 1) {
+            $scope.goto($scope.porfolios[$scope.currentIndex + 1], $scope.currentIndex + 1);
+        }
+        else {
+            $scope.goto($scope.porfolios[0], 0);
+        }
+    };
+
+    $scope.prev = function () {
+        if ($scope.currentIndex - 1 > 0) {
+            $scope.goto($scope.porfolios[$scope.currentIndex - 1], $scope.currentIndex - 1);
+        }
+        else {
+            $scope.goto($scope.porfolios[$scope.porfolios.length - 1], $scope.porfolios.length - 1);
+        }
+    };
+
+    if ($scope.portfolio) {
+        var idx = parseInt($scope.portfolio);
+        $scope.openPlayer($scope.porfolios[idx], idx);
+    }
 });
