@@ -81,22 +81,22 @@
                 <p>從使用者需求出發，創造最好的產品體驗！</p>
                 <div class="row clear services">
                     <div class="service col col-3 mobile-full">
-                        <div class="thumbnail" style="background-image: url(images/features/web.png)"></div>
+                        <div class="thumbnail" style="background-image: url(images/features/1.svg)"></div>
                         <h4 class="title">網頁設計</h4>
                         <p class="descript">建立您專屬的網站，精美及可靠的動線設計，讓使用者輕鬆體驗您提供的一切。</p>
                     </div>
                     <div class="service col col-3 mobile-full">
-                        <div class="thumbnail" style="background-image: url(images/features/app.png)"></div>
-                        <h4 class="title">App 設計</h4>
+                        <div class="thumbnail" style="background-image: url(images/features/2.svg)"></div>
+                        <h4 class="title">App 應用設計</h4>
                         <p class="descript">專注在移動端的設計體驗，美學及使用者經驗都是我們設計的初衷。</p>
                     </div>
                     <div class="service col col-3 mobile-full">
-                        <div class="thumbnail" style="background-image: url(images/features/prototype.png)"></div>
+                        <div class="thumbnail" style="background-image: url(images/features/3.svg)"></div>
                         <h4 class="title">產品雛形快速開發</h4>
                         <p class="descript">利用最小可行性產品快速驗證你的想法，我們能夠迅速的開發極為擬真的產品雛形。</p>
                     </div>
                     <div class="service col col-3 mobile-full">
-                        <div class="thumbnail" style="background-image: url(images/features/info.png)"></div>
+                        <div class="thumbnail" style="background-image: url(images/features/4.svg)"></div>
                         <h4 class="title">產品體驗優化諮詢</h4>
                         <p class="descript">針對產品概念與介面設計，提供咨詢的服務，力求找出更好的流程與想法。</p>
                     </div>
@@ -275,6 +275,21 @@
               <div class="double-bounce2"></div>
             </div>
             <img ng-if="current == porfolio" ng-src="images/portfolio/full/{{porfolio.full}}" ng-class="{'show': porfolio.full && isOpenPlayer}">
+        </div>
+        <div class="others" ng-click="$event.stopPropagation()">
+            <div class="gallery">
+                <div class="row clear">
+                    <div class="col col-3" ng-repeat="porfolio in porfolios">
+                        <a ng-click="openPlayer(porfolio, $index)">
+                            <div class="project" ng-class="{'active': current == porfolio}">
+                                <div class="thumbnail" style="background-image: url(images/portfolio/{{porfolio.thumbnail}})">
+                                </div>
+                                <div class="title">{{porfolio.name}}</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="player-overlay" ng-click="closePlayer()"></div>

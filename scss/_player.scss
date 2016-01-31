@@ -90,7 +90,7 @@ body {
 	.content {
 		cursor: default;
 		display: inline-block;
-		background-color: #2C2C2C;
+		background-color: #000;
 		// border-radius: 5px;
 		width: 1400px;
 		max-width: 100%;
@@ -98,7 +98,7 @@ body {
 		overflow: hidden;
 		box-shadow: 0 0 10px #000, 0 0 20px rgba(#000, 0.2);
 		&.small {
-			width: 768px;
+			width: 728px;
 		}
 		img {
 			max-width: 100%;
@@ -112,6 +112,12 @@ body {
 				opacity: 1;	
 			}
 		}
+	}
+	.others {
+		width: 1400px;
+		max-width: 100%;
+		overflow: hidden;
+	    margin: 0 auto;
 	}
 }
 
@@ -169,7 +175,7 @@ body {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(#000, 0.7);
+	background-color: rgba(#000, 0.9);
 	opacity: 0.5;
 	transition: opacity 500ms ease;
 }
